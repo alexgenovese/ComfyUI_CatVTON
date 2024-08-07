@@ -1,4 +1,4 @@
-import os
+import os, sys
 import torch
 from .model.cloth_masker import AutoMasker as AM
 from .model.cloth_masker import vis_mask
@@ -8,6 +8,8 @@ from diffusers.image_processor import VaeImageProcessor
 from huggingface_hub import snapshot_download
 from PIL import Image
 import numpy as np
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from torchvision.transforms.functional import to_pil_image, to_tensor
 
